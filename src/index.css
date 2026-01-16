@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+body {
+  padding-top: 100px;
+  font-family: "Nunito", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+
+}

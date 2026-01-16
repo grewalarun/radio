@@ -1,0 +1,53 @@
+import { type Station } from "../types/station";
+
+interface Props {
+  station: Station | null;
+}
+
+export default function BottomPlayer({ station }: Props) {
+  return (
+    <div className="fixed bottom-0 left-0 right-0 bg-amber-400 border-t shadow-lg h-24 px-4 flex items-center gap-4">
+      
+      {/* Station Info */}
+      <div className="flex items-center gap-3 min-w-72">
+        <img
+          src={station?.favicon?.trim() ? station.favicon : "/default.svg"}
+          onError={(e) => {
+            (e.currentTarget as HTMLImageElement).src = "/default.svg";
+          }}
+          alt={station?.name || "Radio"}
+          className="w-14 h-14 rounded-lg bg-gray-200"
+        />
+        <div className="overflow-hidden">
+          <p className="font-semibold truncate">
+            {station?.name || "Select a station"}
+          </p>
+          <p className="text-sm text-gray-500 truncate">
+            {station?.language || "Live Radio"}
+          </p>
+        </div>
+      </div>
+
+      {/* Controls */}
+      <div className="flex-1 max-w-2xl">
+        {station ? (
+          <audio
+            controls
+            autoPlay
+            src={station.url}
+            className="w-full"
+          />
+        ) : (
+          <p className="text-gray-500 text-center">
+            🎧 Choose a radio station to start listening
+          </p>
+        )}
+      </div>
+
+      {/* Meta */}
+      <div className="hidden md:block text-sm text-gray-500 text-right min-w-7">
+        {station && `${station.bitrate} kbps`}
+      </div>
+    </div>
+  );
+}
