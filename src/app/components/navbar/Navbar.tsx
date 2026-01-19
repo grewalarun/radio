@@ -25,11 +25,12 @@ const Navbar = () => {
                 end
                 to={route.path || '#'}
                 className={({ isActive }) => 
-              `flex items-center lg:gap-4 px-4 py-3 bg-primary/10 text-primary rounded-xl ${isActive ? 'active text-primary' : 'link text-gray-500'}`
+              `flex items-center lg:gap-4 px-4 py-3 bg-primary/10 rounded-xl ${isActive ? 'active text-primary' : 'link text-gray-500'}`
   }>
                 <span className="icon text-lg">{route.icon && <route.icon />}</span>
                 <span className="font-medium hidden lg:block">{route.title}</span>
               </NavLink>
+              {route.children?
                <ul className='dropdownMenu'>
                   {route.children?.map((child) => (
                     <li key={child.path}>
@@ -46,6 +47,7 @@ const Navbar = () => {
                     </li>
                   ))}
                 </ul>
+:""}
             </li>
           ))}
       </ul>
