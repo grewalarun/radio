@@ -3,10 +3,21 @@ import { routes } from '../../../routes/routeConfig';
 import './Navbar.css';
 import { ThemeSwitch } from '../themeswitch/ThemeSwitch';
 
+
 const Navbar = () => {
   return (
-    <nav>
-      <ul>
+    <aside className="w-20 lg:w-64 border-r border-slate-200 dark:border-slate-800 flex flex-col lg:items-stretch py-6 px-4 bg-white/50 dark:bg-slate-900/50 glass z-20">
+
+    <nav className="flex flex-col gap-3 px-2 mb-10">
+      <div className="header">
+       <div className="flex items-center gap-3 px-2 mb-10">
+<div className="w-10 h-10 bg-primary rounded-xl flex items-center justify-center text-white">
+<span className="material-icons-round">radio</span>
+</div>
+<span className="text-xl font-bold hidden lg:block tracking-tight">SonicStream</span>
+</div>
+      </div>
+      <ul className="flex flex-col gap-3 px-2 mb-10">
         {routes
           .filter(route => route.showInNav)
           .map(route => (
@@ -14,8 +25,11 @@ const Navbar = () => {
               <NavLink
                 end
                 to={route.path || '#'}
-                
-              >
+                //className="flex items-center gap-4 px-4 py-3 bg-primary/10 rounded-xl "
+                className={({ isActive }) => 
+    `flex items-center gap-4 px-4 py-3 bg-primary/10 rounded-xl ${isActive ? 'active text-primary' : 'link text-gray-500'}`
+  }>
+                <span className="icon text-lg">{route.icon && <route.icon />}</span>
                 {route.title}
               </NavLink>
                <ul className='dropdownMenu'>
@@ -39,6 +53,7 @@ const Navbar = () => {
       </ul>
      <ThemeSwitch/>
     </nav>
+    </aside>
   );
 };
 

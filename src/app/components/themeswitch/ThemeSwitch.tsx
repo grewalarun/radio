@@ -1,57 +1,44 @@
-// ThemeSwitch.tsx
-import styled from "styled-components";
-import { useAppSelector, useAppDispatch } from "../../hooks";
-import { toggleTheme } from "../../features/theme/themeSlice";
-import { FaSun, FaMoon } from "react-icons/fa";
-
-// Container for the toggle
-const SwitchContainer = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-right: 24px;
-`;
-
-// The toggle track
-const ToggleTrack = styled.div<{ thememode: string }>`
-  width: 50px;
-  height: 30px;
-  background-color: ${({ thememode }) =>
-    thememode === "light" ? "#f1c40f" : "#34495e"};
-  border-radius: 30px;
-  display: flex;
-  align-items: center;
-  padding: 3px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-`;
-
-// The toggle knob
-const ToggleKnob = styled.div<{ thememode: string }>`
-  width: 24px;
-  height: 24px;
-  background-color: ${({ theme }) => theme.background};
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transform: ${({ thememode }) =>
-    thememode === "light" ? "translateX(5px)" : "translateX(20px)"};
-  transition: transform 0.3s ease, background-color 0.3s ease;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-`;
+import { useState } from 'react'
+import { FaSun, FaMoon } from 'react-icons/fa'
+import { getTheme, toggleTheme } from '../../features/theme/theme'
 
 export const ThemeSwitch = () => {
-  const theme = useAppSelector((state: any) => state.theme.value);
-  const dispatch = useAppDispatch();
+  const [theme, setLocalTheme] = useState(getTheme())
+  const isLight = theme === 'light'
 
-  return (
-    <SwitchContainer>
-      <ToggleTrack thememode={theme} onClick={() => dispatch(toggleTheme())}>
-        <ToggleKnob thememode={theme}>
-          {theme === "light" ? <FaSun color="#f39c12" /> : <FaMoon color="#f1c40f" />}
-        </ToggleKnob>
-      </ToggleTrack>
-    </SwitchContainer>
-  );
-};
+  const handleToggle = () => {
+    toggleTheme()
+    setLocalTheme(getTheme())
+  }
+
+  return (<>
+      <div className="flex items-center gap-3 mr-6">
+      <div
+        onClick={handleToggle}
+        className={`
+          w-[50px] h-[30px] rounded-full p-[3px]
+          flex items-center cursor-pointer
+          transition-colors duration-300
+          ${isLight ? 'bg-[#f1c40f]' : 'bg-[#34495e]'}
+        `}
+      >
+        <div
+          className={`
+            w-6 h-6 rounded-full bg-white
+            flex items-center justify-center
+            shadow-md
+            transition-transform duration-300
+            ${isLight ? 'translate-x-[0px]' : 'translate-x-[20px]'}
+          `}
+        >
+          {isLight ? (
+            <FaSun className="text-[#f39c12]" size={14} />
+          ) : (
+            <FaMoon className="text-[#f1c40f]" size={14} />
+          )}
+        </div>
+      </div>
+    </div>
+    </>
+  )
+}

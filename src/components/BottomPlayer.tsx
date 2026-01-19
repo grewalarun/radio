@@ -6,7 +6,7 @@ interface Props {
 
 export default function BottomPlayer({ station }: Props) {
   return (
-    <div className="fixed bottom-0 left-0 right-0 bg-amber-400 border-t shadow-lg h-24 px-4 flex items-center gap-4">
+    <div className="absolute bottom-0 left-0 right-0 bg-amber-400 border-t shadow-lg h-24 px-4 flex items-center gap-4absolute bottom-6 left-8 right-8 h-24 glass bg-white/70 dark:bg-slate-900/80 border border-slate-200 dark:border-slate-800 rounded-[32px] shadow-2xl z-30 flex items-center px-8 gap-8">
       
       {/* Station Info */}
       <div className="flex items-center gap-3 min-w-72">

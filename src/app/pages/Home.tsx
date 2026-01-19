@@ -17,19 +17,19 @@ function App() {
   );
 
   return (
-    <div className="h-screen flex flex-col">
+    <div className="h-screen flex flex-col relative">
       {/* Top Search */}
       
       <SearchBar value={search} onChange={setSearch} />
 
       {/* Station Grid */}
-      <main className="flex-1 overflow-y-auto pb-28 px-4">
+     
         <StationGrid
           stations={filteredStations}
           onSelect={setCurrent}
           selected={current}
         />
-      </main>
+
 
       {/* Fixed Player */}
       <BottomPlayer station={current} />

@@ -5,7 +5,7 @@ interface Props {
 
 export default function SearchBar({ value, onChange }: Props) {
   return (
-    <div className="sticky top-0 z-10 border-b p-4">
+    <div className="sticky top-0 z-10 border-b border-slate-200 dark:border-slate-800 p-4">
       <input
         type="text"
         placeholder="Search radio stations, languages..."
