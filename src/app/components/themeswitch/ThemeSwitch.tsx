@@ -12,7 +12,7 @@ export const ThemeSwitch = () => {
   }
 
   return (<>
-      <div className="flex items-center gap-3 mr-6">
+      <div className="flex items-center gap-3 px-2">
       <div
         onClick={handleToggle}
         className={`

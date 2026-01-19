@@ -1,6 +1,6 @@
 import Home from '../app/pages/Home';
 import FavuritePage from '../app/pages/FevoritePage';
-import { FaHeart, FaHome } from 'react-icons/fa';
+import { FaHeart, FaHome, FaMusic } from 'react-icons/fa';
 import Bollywood from '../app/pages/Bollywood';
 
 export interface AppRoute {
@@ -31,7 +31,7 @@ export const routes: AppRoute[] = [
         path: '/bollywood',
         title: 'Bollywood',
         element: Bollywood,
-        icon: FaHeart,
+        icon: FaMusic,
         showInNav: true,
     }
 //    {

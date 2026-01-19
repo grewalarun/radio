@@ -5,7 +5,7 @@ import { ThemeSwitch } from '../themeswitch/ThemeSwitch';
 
 const Navbar = () => {
   return (
-    <aside className="w-20 lg:w-64 border-r border-slate-200 dark:border-slate-800 flex flex-col lg:items-stretch py-6 px-4 bg-white/50 dark:bg-slate-900/50 glass z-20">
+    <aside className="w-20 lg:w-64 border-r border-slate-200 dark:border-slate-800 flex flex-col items-center lg:items-stretch py-6 px-4 bg-white/50 dark:bg-slate-900/50 glass z-20">
 
     <nav className="flex flex-col gap-3 px-2 mb-10">
       <div className="header">
@@ -24,12 +24,11 @@ const Navbar = () => {
               <NavLink
                 end
                 to={route.path || '#'}
-                //className="flex items-center gap-4 px-4 py-3 bg-primary/10 rounded-xl "
                 className={({ isActive }) => 
-    `flex items-center gap-4 px-4 py-3 bg-primary/10 rounded-xl ${isActive ? 'active text-primary' : 'link text-gray-500'}`
+              `flex items-center lg:gap-4 px-4 py-3 bg-primary/10 text-primary rounded-xl ${isActive ? 'active text-primary' : 'link text-gray-500'}`
   }>
                 <span className="icon text-lg">{route.icon && <route.icon />}</span>
-                {route.title}
+                <span className="font-medium hidden lg:block">{route.title}</span>
               </NavLink>
                <ul className='dropdownMenu'>
                   {route.children?.map((child) => (
