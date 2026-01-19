@@ -1,5 +1,5 @@
 import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
-import type { Station } from "../../../types/station";
+import type { Station } from "../../types/station";
 
 
 

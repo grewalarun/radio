@@ -1,7 +1,7 @@
-import { type Station } from "../types/station";
+import { type Station } from "../../types/station";
 import { FaStar, FaRegStar, FaPlayCircle } from "react-icons/fa";
-import { useAppDispatch, useAppSelector } from "../app/hooks";
-import { toggleFavorite } from "../app/features/counter/fevouriteSlice";
+import { useAppDispatch, useAppSelector } from "../hooks/storeHooks";
+import { toggleFavorite } from "../redux/fevouriteSlice";
 
 
 interface Props {

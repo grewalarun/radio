@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { type Station } from "../../types/station";
-import StationGrid from "../../components/StationGrid";
-import BottomPlayer from "../../components/BottomPlayer";
-import SearchBar from "../../components/SearchBar";
-import { useAppSelector } from "../hooks";
+import StationGrid from "../components/StationGrid";
+import BottomPlayer from "../components/BottomPlayer";
+import SearchBar from "../components/SearchBar";
+import { useAppSelector } from "../hooks/storeHooks";
 
-function App() {
+function FevoritePage() {
 
   const [search, setSearch] = useState("");
   const [current, setCurrent] = useState<Station | null>(null);
@@ -37,4 +37,8 @@ console.log(favurites);
   );
 }
 
-export default App;
+export default FevoritePage;
+
+
+
+

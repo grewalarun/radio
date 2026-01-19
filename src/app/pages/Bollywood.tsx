@@ -3,7 +3,7 @@ import BottomPlayer from "../components/BottomPlayer";
 import SearchBar from "../components/SearchBar";
 import { useStations } from "../hooks/useStations";
 
-function Home() {
+function Bollywood() {
  const { 
     stations, 
     status, 
@@ -11,8 +11,8 @@ function Home() {
     setSearch, 
     currentStation, 
     setCurrentStation 
-  } = useStations("bycountry", "india", 500, (state) => state.stations);
-console.log(stations);
+  } = useStations("bytag", "bollywood", 1000, (state) => state.stations);
+
   return (
     <div className="h-screen flex flex-col relative bg-white dark:bg-background-dark">
       {/* Top Search */}
@@ -42,4 +42,4 @@ console.log(stations);
     </div>
   );
 }
-export default Home;
+export default Bollywood;

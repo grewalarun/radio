@@ -1,11 +1,11 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import type { Station } from "../../../types/station";
+import type { Station } from "../../types/station";
 
 export const fetchStations = createAsyncThunk(
   "stations/fetchStations",
-  async () => {
+  async ({ tag, country, limit }: { tag: string, country: string, limit: number }) => {
     const res = await fetch(
-      "http://de1.api.radio-browser.info/json/stations/bycountry/india"
+      `https://de1.api.radio-browser.info/json/stations/${tag}/${country}?limit=${limit}`
     );
     return (await res.json()) as Station[];
   }

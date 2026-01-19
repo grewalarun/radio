@@ -1,7 +1,7 @@
 import './App.css'
 import Navbar from './app/components/navbar/Navbar';
 import RenderRoutes from './routes/RenderRoutes';
-import { setTheme, getTheme } from './app/features/theme/theme.ts';
+import { setTheme, getTheme } from './app/features/theme.ts';
 
 
 function App() {

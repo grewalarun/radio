@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { FaSun, FaMoon } from 'react-icons/fa'
-import { getTheme, toggleTheme } from '../../features/theme/theme'
+import { getTheme, toggleTheme } from '../../features/theme'
 
 export const ThemeSwitch = () => {
   const [theme, setLocalTheme] = useState(getTheme())
