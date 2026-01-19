@@ -1,6 +1,5 @@
 import { NavLink} from 'react-router-dom';
 import { routes } from '../../../routes/routeConfig';
-import './Navbar.css';
 import { ThemeSwitch } from '../themeswitch/ThemeSwitch';
 
 
