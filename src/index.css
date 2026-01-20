@@ -20,8 +20,9 @@
 
 
  .glass {
-            backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
+            backdrop-filter: blur(12px);
+            
         }
         .neon-border {
             box-shadow: 0 0 15px rgba(59, 130, 246, 0.5);
