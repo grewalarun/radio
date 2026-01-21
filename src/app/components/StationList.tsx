@@ -21,7 +21,13 @@ export default function StationList({ stations, onSelect }: Props) {
           }}
         >
           <img
-            src={station.favicon!=='null'? station.favicon?.trim() ? station.favicon : "/default.svg":"/default.svg"}
+            src={
+              station.favicon !== "null"
+                ? station.favicon?.trim()
+                  ? station.favicon
+                  : "/default.svg"
+                : "/default.svg"
+            }
             alt={station.name}
             width={40}
             height={40}

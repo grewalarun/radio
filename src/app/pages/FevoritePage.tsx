@@ -6,21 +6,20 @@ import SearchBar from "../components/SearchBar";
 import { useAppSelector } from "../hooks/storeHooks";
 
 function FevoritePage() {
-
   const [search, setSearch] = useState("");
   const [current, setCurrent] = useState<Station | null>(null);
-  const favurites = useAppSelector((state)=>state.favurite.value);
+  const favurites = useAppSelector((state) => state.favurite.value);
 
-
-  const filteredStations = favurites.filter((s) =>
-    s.name.toLowerCase().includes(search.toLowerCase()) ||
-    s.language?.toLowerCase().includes(search.toLowerCase())
+  const filteredStations = favurites.filter(
+    (s) =>
+      s.name.toLowerCase().includes(search.toLowerCase()) ||
+      s.language?.toLowerCase().includes(search.toLowerCase()),
   );
-console.log(favurites);
+  console.log(favurites);
   return (
     <div className="h-screen flex flex-col">
       {/* Top Search */}
-      
+
       <SearchBar value={search} onChange={setSearch} />
       {/* Station Grid */}
       <main className="flex-1 overflow-y-auto pb-28 px-4">
@@ -30,15 +29,8 @@ console.log(favurites);
           selected={current}
         />
       </main>
-
-      {/* Fixed Player */}
-      <BottomPlayer station={current} />
     </div>
   );
 }
 
 export default FevoritePage;
-
-
-
-

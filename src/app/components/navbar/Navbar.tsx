@@ -1,6 +1,7 @@
 import { NavLink} from 'react-router-dom';
 import { routes } from '../../../routes/routeConfig';
 import { ThemeSwitch } from '../themeswitch/ThemeSwitch';
+import { FaRadio } from 'react-icons/fa6';
 
 
 const Navbar = () => {
@@ -11,9 +12,9 @@ const Navbar = () => {
       <div className="header">
        <div className="flex items-center gap-3 px-2 mb-10">
 <div className="w-10 h-10 bg-primary rounded-xl flex items-center justify-center text-white">
-<span className="material-icons-round">radio</span>
+<FaRadio/>
 </div>
-<span className="text-xl font-bold hidden lg:block tracking-tight">SonicStream</span>
+<span className="text-xl font-bold hidden lg:block tracking-tight">SonicRadio</span>
 </div>
       </div>
       <ul className="flex flex-col gap-3 px-2 mb-10">

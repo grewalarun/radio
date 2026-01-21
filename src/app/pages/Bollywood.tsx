@@ -4,13 +4,13 @@ import SearchBar from "../components/SearchBar";
 import { useStations } from "../hooks/useStations";
 
 function Bollywood() {
- const { 
-    stations, 
-    status, 
-    search, 
-    setSearch, 
-    currentStation, 
-    setCurrentStation 
+  const {
+    stations,
+    status,
+    search,
+    setSearch,
+    currentStation,
+    setCurrentStation,
   } = useStations("bytag", "bollywood", 1000, (state) => state.stations);
 
   return (
@@ -20,11 +20,11 @@ function Bollywood() {
 
       {/* Conditional Rendering based on Status */}
       <main className="flex-1 overflow-y-auto">
-        {status === 'loading' ? (
+        {status === "loading" ? (
           <div className="flex justify-center items-center h-full">
             <h4 className="text-xl animate-pulse">Loading Stations...</h4>
           </div>
-        ) : status === 'failed' ? (
+        ) : status === "failed" ? (
           <div className="text-center mt-20 text-red-500">
             Error loading stations. Please try again.
           </div>
@@ -36,9 +36,6 @@ function Bollywood() {
           />
         )}
       </main>
-
-      {/* Fixed Player */}
-      <BottomPlayer station={currentStation} />
     </div>
   );
 }
