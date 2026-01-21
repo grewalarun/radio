@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { type Station } from "../../types/station";
 import StationGrid from "../components/StationGrid";
-import BottomPlayer from "../components/BottomPlayer";
 import SearchBar from "../components/SearchBar";
 import { useAppSelector } from "../hooks/storeHooks";
 

@@ -1,5 +1,4 @@
 import StationGrid from "../components/StationGrid";
-import BottomPlayer from "../components/BottomPlayer";
 import SearchBar from "../components/SearchBar";
 import { useStations } from "../hooks/useStations";
 
