@@ -10,7 +10,7 @@ interface Props {
   selected: Station | null;
 }
 
-export default function StationGrid({ stations, onSelect, selected }: Props) {
+export default function StationGrid({ stations, selected }: Props) {
   const dispatch = useAppDispatch();
 
   // ✅ Get favorites from Redux
